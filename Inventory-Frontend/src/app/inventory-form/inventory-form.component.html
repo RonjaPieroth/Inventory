@@ -1,12 +1,28 @@
-<p>Create new inventory:</p>
-<form [formGroup]="inventoryForm" (submit)="saveInventory()">
-  <label for="name">name: </label>
-  <input id="name" type="text" formControlName="name"><br>
-  <label for="purchase-date">purchased on:</label>
-  <input id="purchase-date" type="date" formControlName="purchaseDate"><br>
-  <label for="price">price: </label>
-  <input id="price" type="number" min="0.01" formControlName="price"><br>
-  <label for="warranty">years of warranty</label>
-  <input id="warranty" type="number" min="0" step="1" formControlName="yearsOfWarranty"><br>
-  <button type="submit" [disabled]="inventoryForm.invalid">speichern</button>
-</form>
+<div class="container">
+  <div class="form">
+    <p>Create new inventory:</p>
+    <form [formGroup]="inventoryForm" (submit)="saveInventory()">
+      <div class="mb-3">
+        <label for="name" class="form-label">name: </label>
+        <input id="name" type="text" formControlName="name" class="form-control"><br>
+      </div>
+      <div class="mb-3">
+        <label for="purchase-date" class="form-label">purchased on:</label>
+        <input id="purchase-date" type="date" formControlName="purchaseDate" class="form-control"><br>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">price: </label>
+        <input id="price" type="number" min="0.01" formControlName="price" class="form-control"><br>
+      </div>
+      <div class="mb-3">
+        <label for="warranty" class="form-label">years of warranty</label>
+        <input id="warranty" type="number" min="0" step="1" formControlName="yearsOfWarranty" class="form-control"><br>
+      </div>
+      <div class="center">
+      <button type="submit" [disabled]="inventoryForm.invalid" class="btn btn-primary">speichern</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+

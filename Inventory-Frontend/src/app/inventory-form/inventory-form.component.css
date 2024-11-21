@@ -1,1 +1,15 @@
+.form-control {
+  width: 80%;
+}
 
+.form {
+  margin: 10px auto;
+  max-width: 400px;
+  background-color: cadetblue;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.center{
+  text-align: center;
+}

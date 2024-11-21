@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Inventory} from '../inventory';
 
 @Component({
@@ -9,6 +9,7 @@ import {Inventory} from '../inventory';
 export class InventoryCardComponent {
 
   @Input() inventory?: Inventory;
+  @Output() deleteEvent = new EventEmitter;
 
   expired(inventory: Inventory): boolean{
     let warrantyExpiresOn: Date = new Date(inventory.purchaseDate);
@@ -19,6 +20,10 @@ export class InventoryCardComponent {
     let today: Date = new Date();
     today.setHours(0,0,0,0)
     return warrantyExpiresOn.getTime() < today.getTime();
+  }
+
+  delete(): void{
+    this.deleteEvent.emit();
   }
 
 }

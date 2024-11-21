@@ -1,16 +1,19 @@
-<div>
-  <span>sort by:</span>
-  <button (click)="sortByWarranty()">Warranty</button>
-  <button (click)="sortByPrice()">Price</button>
-</div>
+<div class="container text-center">
+  <div class="d-flex">
+  <span class="form-control me-2">sort by:
+  <button class="btn btn-outline-success" type="button" (click)="sortByWarranty()">Warranty</button>
+  <button class="btn btn-outline-success" type="button" (click)="sortByPrice()">Price</button>
+    </span>
+  </div>
 
-<ul>
-  <li *ngFor="let inventory of sortedList ? sortedList : inventories">
-    <div >
-    <app-inventory-card [inventory]="inventory"></app-inventory-card>
-    <button *ngIf="inventory.id" (click)="deleteInventory(inventory.id)">delete</button>
+
+  <div class="row">
+    <div *ngFor="let inventory of sortedList ? sortedList : inventories" class="col-3">
+      <div>
+        <app-inventory-card *ngIf="inventory.id" [inventory]="inventory"
+                            (deleteEvent)="deleteInventory(inventory.id)"></app-inventory-card>
+      </div>
     </div>
-  </li>
-</ul>
-
+  </div>
+</div>
 

@@ -1,1 +1,19 @@
+.container{
+  margin-top: 10px;
+}
+
+
+.d-flex button{
+  margin: 3px;
+  min-width: 100px;
+}
+
+
+
+.form-control{
+  width: 30%;
+  background-color: cadetblue;
+  color: aliceblue;
+  border: #4E8284 1px solid;
+}
 
