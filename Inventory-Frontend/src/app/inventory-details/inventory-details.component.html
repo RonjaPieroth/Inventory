@@ -1,0 +1,18 @@
+<h2>{{inventory?.name}}</h2>
+<p>id: {{inventory?.id}}</p>
+<p> price: {{inventory?.price}}</p>
+<p>Warranty: {{inventory?.yearsOfWarranty}} years</p>
+<p>purchased on: {{inventory?.purchaseDate | date}}</p>
+<button *ngIf="!modify" (click)="modify=true">modify</button>
+<form *ngIf="modify && inventory && inventoryForm" [formGroup]="inventoryForm">
+  <label for="name">name: </label>
+  <input id="name" type="text"  formControlName="name"><br>
+  <label for="purchase-date">purchased on:</label>
+  <input id="purchase-date" type="date"  formControlName="purchaseDate"><br>
+  <label for="price">price: </label>
+  <input id="price" type="number" min="0.01"  formControlName="price"><br>
+  <label for="warranty">years of warranty</label>
+  <input id="warranty" type="number" min="0" step="1"  formControlName="yearsOfWarranty"><br>
+  <button type="button" (click)="modifyInventory()" [disabled]="inventoryForm.invalid">speichern</button>
+</form>
+

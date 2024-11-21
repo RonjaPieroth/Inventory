@@ -1,0 +1,16 @@
+<div>
+  <span>sort by:</span>
+  <button (click)="sortByWarranty()">Warranty</button>
+  <button (click)="sortByPrice()">Price</button>
+</div>
+
+<ul>
+  <li *ngFor="let inventory of sortedList ? sortedList : inventories">
+    <div >
+    <app-inventory-card [inventory]="inventory"></app-inventory-card>
+    <button *ngIf="inventory.id" (click)="deleteInventory(inventory.id)">delete</button>
+    </div>
+  </li>
+</ul>
+
+
